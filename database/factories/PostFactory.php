@@ -14,8 +14,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>\App\Models\User::factory(),
-            //'user_id'=>\App\Models\User::all()->random()->id,
+            'user_id'=>\App\Models\User::all('id')->random(),
             'title'=>$this->faker->sentence,
             'post_image'=>$this->faker->imageUrl('900', '300'),
             'body'=>$this->faker->paragraph
