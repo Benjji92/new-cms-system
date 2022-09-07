@@ -5,9 +5,9 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <form action="{{ route('user.profile.update', $user) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user.update', $user) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
+                    @method('PATCH')
                     <div class="mb-4">
                         <img class="img-thumbnail rounded-circle"
                             src="{{ $user->avatar }}" alt="">
@@ -110,7 +110,7 @@
                                                      @if ($user->roles->contains($role))
                                                          disabled
                                                      @endif
-
+                                                     
                                                      ">Attach</button>
                                                      
                                                  </form>
@@ -118,15 +118,15 @@
                                          </td>
                                          <td>
                                             <form action="{{ route('user.role.detach', $user->id) }}" method="post">
-                                                    @csrf  
-                                                    @method('PUT')
-                                                    <input type="hidden" name="role" value="{{ $role->id }}">
-                                                    <button class="btn btn-danger
-                                                    @if (!$user->roles->contains($role))
+                                                @csrf  
+                                                @method('PUT')
+                                                <input type="hidden" name="role" value="{{ $role->id }}">
+                                                <button class="btn btn-danger
+                                                @if (!$user->roles->contains($role))
                                                          disabled
                                                      @endif
-                                                    ">Detach</button>
-                                                </form>
+                                                ">Detach</button>
+                                            </form>
 
                                         </td>
                                      </tr>
@@ -140,3 +140,4 @@
     @endsection
 
 </x-admin-master>
+
