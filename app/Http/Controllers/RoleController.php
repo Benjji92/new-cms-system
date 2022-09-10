@@ -80,7 +80,7 @@ class RoleController extends Controller
 
         $role->delete();
 
-        $request->session()->flash('role-deleted','Role'. $role->name .'was deleted');
+        $request->session()->flash('role-deleted','Role '. $role->name .' was deleted');
 
         return back();
 

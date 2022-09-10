@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Post;
 
 class Post extends Model
 {
@@ -27,6 +28,14 @@ class Post extends Model
     return asset($value);
 
    }
+
+   
+    public function comments()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+   
 
 
 

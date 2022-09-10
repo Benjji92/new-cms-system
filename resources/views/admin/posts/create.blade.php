@@ -1,5 +1,8 @@
 <x-admin-master>
 
+
+    
+
     @section('content')
         <h1>Create a post</h1>
 
@@ -12,6 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="file">File</label>
+                
                 <input type="file" name="post_image" id="post_image" class="form-control-file">
             </div>
             <div class="form group">
@@ -20,5 +24,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     @endsection
+
 
 </x-admin-master>
