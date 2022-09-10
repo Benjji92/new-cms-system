@@ -10,6 +10,17 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+
+        'post_id',
+        'email',
+        'author',
+        'body',
+        'is_acitve'
+
+
+    ];
+
 
     public function replies()
     {
